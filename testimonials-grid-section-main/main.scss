@@ -1,0 +1,259 @@
+@import 'reset';
+@import 'fonts';
+@import 'style';
+
+body{
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--Lightgrayishblue);
+}
+.grid-container{
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+ .template-grid{
+     margin: 5vw 0rem;
+     display: grid;
+     grid-template-rows: 50% 50%;
+     grid-template-columns: 25% 25% 25% 25%;
+     grid-template-areas: "card1 card1 card2 card5"
+                          "card3 card4 card4 card5";
+    gap: 1vw 1vw;
+    width: 80%;
+    // min-height: 50vh;
+    .card{
+        padding: 1vw 2vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .card-title{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .card-profile{
+                width: 2rem;
+                img{
+                    max-width: 100%;
+                    border-radius: 50%;
+                    border: 2px solid rgba(207, 207, 207,0.5);
+                }
+            }
+            .card-person-details{
+                margin: 0rem 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                .card-person-name{
+                    color: var(--Lightgray);
+                }
+                .card-person-qualification{
+                    color: rgba(207, 207, 207,0.5);
+                    font-size: 0.6vw;
+                }
+            }
+        }
+        .card-subject{
+            font-size: 1.2vw;
+            line-height: normal;
+            margin: 1vw 0vw;
+        }
+        .card-desc{
+            font-size: 0.9vw;
+            color: rgba(207, 207, 207,0.5);
+            margin-bottom: 1vw;
+        }
+    }
+    .card:nth-child(1){
+        grid-area: card1;
+        background-color: var(--Moderateviolet);
+        color: rgba(255,255,255,0.8);
+        border-radius: 10px;
+        background: url("images/bg-pattern-quotation.svg")  var(--Moderateviolet);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-origin: content-box;
+        background-size: 20%;
+    }
+    .card:nth-child(2){
+        grid-area: card2;
+        background-color: var(--Verydarkgrayishblue);
+        color: rgba(255,255,255,0.8);
+        border-radius: 10px;
+    }
+    .card:nth-child(3){
+        grid-area: card3;
+        background-color: var(--White);
+        color: rgba(25, 33, 46,0.8);
+        border-radius: 10px;
+        .card-desc{
+            font-size: 0.9vw;
+            color: rgba(25, 33, 46,0.5);
+            margin-bottom: 1vw;
+        }
+        .card-title{
+            
+            .card-person-details{
+               
+                .card-person-name{
+                    color: var(--Verydarkgrayishblue);
+                }
+                .card-person-qualification{
+                    color:rgba(25, 33, 46,0.5);
+                    font-size: 0.6vw;
+                }
+            }
+        }
+    }
+    .card:nth-child(4){
+        grid-area: card4;
+        background-color: var(--Verydarkblackishblue);
+        color: rgba(255,255,255,0.8);
+        border-radius: 10px;
+    }
+    .card:nth-child(5){
+        grid-area: card5;
+        background-color: var(--White);
+        color: rgba(25, 33, 46,0.8);
+        border-radius: 10px;
+        .card-desc{
+            font-size: 0.9vw;
+            color: rgba(25, 33, 46,0.5);
+            margin-bottom: 1vw;
+        }
+        .card-title{
+            
+            .card-person-details{
+               
+                .card-person-name{
+                    color: var(--Verydarkgrayishblue);
+                }
+                .card-person-qualification{
+                    color:rgba(25, 33, 46,0.5);
+                    font-size: 0.6vw;
+                }
+            }
+        }
+    }
+
+ }
+ @media only screen and (max-width: 700px) {
+    .template-grid{
+        margin: 5rem 0rem;
+        display: flex;
+        flex-direction: column;
+        .card{
+            padding: 1rem 2rem;
+            margin: 1rem 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .card-title{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .card-profile{
+                    width: 2rem;
+                    img{
+                        max-width: 100%;
+                        border-radius: 50%;
+                        border: 2px solid rgba(207, 207, 207,0.5);
+                    }
+                }
+                .card-person-details{
+                    margin: 0rem 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    .card-person-name{
+                        color: var(--Lightgray);
+                    }
+                    .card-person-qualification{
+                        color: rgba(207, 207, 207,0.5);
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+            .card-subject{
+                font-size: 1.2rem;
+                line-height: normal;
+                margin: 1rem 0rem;
+            }
+            .card-desc{
+                font-size: 0.9rem;
+                color: rgba(207, 207, 207,0.5);
+                margin-bottom: 1rem;
+            }
+        }
+        .card:nth-child(1){
+            grid-area: card1;
+            background-color: var(--Moderateviolet);
+            color: rgba(255,255,255,0.8);
+            border-radius: 10px;
+        }
+        .card:nth-child(2){
+            grid-area: card2;
+            background-color: var(--Verydarkgrayishblue);
+            color: rgba(255,255,255,0.8);
+            border-radius: 10px;
+        }
+        .card:nth-child(3){
+            grid-area: card3;
+            background-color: var(--White);
+            color: rgba(25, 33, 46,0.8);
+            border-radius: 10px;
+            .card-desc{
+                font-size: 0.9rem;
+                color: rgba(25, 33, 46,0.5);
+                margin-bottom: 1rem;
+            }
+            .card-title{
+                
+                .card-person-details{
+                   
+                    .card-person-name{
+                        color: var(--Verydarkgrayishblue);
+                    }
+                    .card-person-qualification{
+                        color:rgba(25, 33, 46,0.5);
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+        }
+        .card:nth-child(4){
+            grid-area: card4;
+            background-color: var(--Verydarkblackishblue);
+            color: rgba(255,255,255,0.8);
+            border-radius: 10px;
+        }
+        .card:nth-child(5){
+            grid-area: card5;
+            background-color: var(--White);
+            color: rgba(25, 33, 46,0.8);
+            border-radius: 10px;
+            .card-desc{
+                font-size: 0.9rem;
+                color: rgba(25, 33, 46,0.5);
+                margin-bottom: 1rem;
+            }
+            .card-title{
+                
+                .card-person-details{
+                   
+                    .card-person-name{
+                        color: var(--Verydarkgrayishblue);
+                    }
+                    .card-person-qualification{
+                        color:rgba(25, 33, 46,0.5);
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+ }

@@ -1,0 +1,410 @@
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;1,500&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --Moderateviolet: hsl(263, 55%, 52%);
+  --Verydarkgrayishblue: hsl(217, 19%, 35%);
+  --Verydarkblackishblue: rgb(25, 33, 46);
+  --White: hsl(0, 0%, 100%);
+  --Lightgray: rgb(207, 207, 207);
+  --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-size: 13px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: var(--Lightgrayishblue);
+}
+
+.grid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.template-grid {
+  margin: 5vw 0rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-areas: "card1 card1 card2 card5" "card3 card4 card4 card5";
+  gap: 1vw 1vw;
+  width: 80%;
+}
+
+.template-grid .card {
+  padding: 1vw 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.template-grid .card .card-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.template-grid .card .card-title .card-profile {
+  width: 2rem;
+}
+
+.template-grid .card .card-title .card-profile img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(207, 207, 207, 0.5);
+}
+
+.template-grid .card .card-title .card-person-details {
+  margin: 0rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.template-grid .card .card-title .card-person-details .card-person-name {
+  color: var(--Lightgray);
+}
+
+.template-grid .card .card-title .card-person-details .card-person-qualification {
+  color: rgba(207, 207, 207, 0.5);
+  font-size: 0.6vw;
+}
+
+.template-grid .card .card-subject {
+  font-size: 1.2vw;
+  line-height: normal;
+  margin: 1vw 0vw;
+}
+
+.template-grid .card .card-desc {
+  font-size: 0.9vw;
+  color: rgba(207, 207, 207, 0.5);
+  margin-bottom: 1vw;
+}
+
+.template-grid .card:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: card1;
+  background-color: var(--Moderateviolet);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  background: url("images/bg-pattern-quotation.svg") var(--Moderateviolet);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-origin: content-box;
+  background-size: 20%;
+}
+
+.template-grid .card:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: card2;
+  background-color: var(--Verydarkgrayishblue);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.template-grid .card:nth-child(3) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: card3;
+  background-color: var(--White);
+  color: rgba(25, 33, 46, 0.8);
+  border-radius: 10px;
+}
+
+.template-grid .card:nth-child(3) .card-desc {
+  font-size: 0.9vw;
+  color: rgba(25, 33, 46, 0.5);
+  margin-bottom: 1vw;
+}
+
+.template-grid .card:nth-child(3) .card-title .card-person-details .card-person-name {
+  color: var(--Verydarkgrayishblue);
+}
+
+.template-grid .card:nth-child(3) .card-title .card-person-details .card-person-qualification {
+  color: rgba(25, 33, 46, 0.5);
+  font-size: 0.6vw;
+}
+
+.template-grid .card:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: card4;
+  background-color: var(--Verydarkblackishblue);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.template-grid .card:nth-child(5) {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: card5;
+  background-color: var(--White);
+  color: rgba(25, 33, 46, 0.8);
+  border-radius: 10px;
+}
+
+.template-grid .card:nth-child(5) .card-desc {
+  font-size: 0.9vw;
+  color: rgba(25, 33, 46, 0.5);
+  margin-bottom: 1vw;
+}
+
+.template-grid .card:nth-child(5) .card-title .card-person-details .card-person-name {
+  color: var(--Verydarkgrayishblue);
+}
+
+.template-grid .card:nth-child(5) .card-title .card-person-details .card-person-qualification {
+  color: rgba(25, 33, 46, 0.5);
+  font-size: 0.6vw;
+}
+
+@media only screen and (max-width: 700px) {
+  .template-grid {
+    margin: 5rem 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .template-grid .card {
+    padding: 1rem 2rem;
+    margin: 1rem 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .template-grid .card .card-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .template-grid .card .card-title .card-profile {
+    width: 2rem;
+  }
+  .template-grid .card .card-title .card-profile img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(207, 207, 207, 0.5);
+  }
+  .template-grid .card .card-title .card-person-details {
+    margin: 0rem 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .template-grid .card .card-title .card-person-details .card-person-name {
+    color: var(--Lightgray);
+  }
+  .template-grid .card .card-title .card-person-details .card-person-qualification {
+    color: rgba(207, 207, 207, 0.5);
+    font-size: 0.6rem;
+  }
+  .template-grid .card .card-subject {
+    font-size: 1.2rem;
+    line-height: normal;
+    margin: 1rem 0rem;
+  }
+  .template-grid .card .card-desc {
+    font-size: 0.9rem;
+    color: rgba(207, 207, 207, 0.5);
+    margin-bottom: 1rem;
+  }
+  .template-grid .card:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: card1;
+    background-color: var(--Moderateviolet);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+  .template-grid .card:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: card2;
+    background-color: var(--Verydarkgrayishblue);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+  .template-grid .card:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: card3;
+    background-color: var(--White);
+    color: rgba(25, 33, 46, 0.8);
+    border-radius: 10px;
+  }
+  .template-grid .card:nth-child(3) .card-desc {
+    font-size: 0.9rem;
+    color: rgba(25, 33, 46, 0.5);
+    margin-bottom: 1rem;
+  }
+  .template-grid .card:nth-child(3) .card-title .card-person-details .card-person-name {
+    color: var(--Verydarkgrayishblue);
+  }
+  .template-grid .card:nth-child(3) .card-title .card-person-details .card-person-qualification {
+    color: rgba(25, 33, 46, 0.5);
+    font-size: 0.6rem;
+  }
+  .template-grid .card:nth-child(4) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: card4;
+    background-color: var(--Verydarkblackishblue);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+  .template-grid .card:nth-child(5) {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 4;
+    grid-area: card5;
+    background-color: var(--White);
+    color: rgba(25, 33, 46, 0.8);
+    border-radius: 10px;
+  }
+  .template-grid .card:nth-child(5) .card-desc {
+    font-size: 0.9rem;
+    color: rgba(25, 33, 46, 0.5);
+    margin-bottom: 1rem;
+  }
+  .template-grid .card:nth-child(5) .card-title .card-person-details .card-person-name {
+    color: var(--Verydarkgrayishblue);
+  }
+  .template-grid .card:nth-child(5) .card-title .card-person-details .card-person-qualification {
+    color: rgba(25, 33, 46, 0.5);
+    font-size: 0.6rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
